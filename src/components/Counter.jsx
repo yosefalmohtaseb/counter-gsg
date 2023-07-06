@@ -11,6 +11,8 @@ class Counter extends Component {
     const { count, decrement, onUpdateCount } = this.props;
     if (count > 0) {
       onUpdateCount(count - decrement);
+    }else{
+      onUpdateCount(0)
     }
   };
 
@@ -19,7 +21,7 @@ class Counter extends Component {
 
     return (
       <div className="counter">
-        <button className="counter-button" onClick={this.handleDecrement} disabled={count === 0}>
+        <button className="counter-button" onClick={this.handleDecrement} >
           Decrement
         </button>
         <span className="counter-value">{count}</span>
